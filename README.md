@@ -11,6 +11,10 @@ How to use it :
 - **Contrainte_multicouche_BOICHOT**: mechanical modeling itself based on Hsueh et al.
 - **GA and croisement GA**: calculation of Genetic algorithm coupled to a Neledr-Mead algorithm.
 
-**Multi-layer thin film on susbtrate
+**Multi-layer thin film on susbtrate**
+
+TO DO
+
+**Multi-layer thin film on susbtrate with creeping**
 
 TO DO
