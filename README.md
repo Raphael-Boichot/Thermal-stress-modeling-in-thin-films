@@ -11,6 +11,8 @@ How to use it :
 - **Contrainte_multicouche_BOICHOT**: mechanical modeling itself based on Hsueh et al.
 - **GA and croisement GA**: calculation of Genetic algorithm coupled to a Neledr-Mead algorithm.
 
+Result should be close to the simplified Stoney equation in case the film is infinitely thin compared to the substrate but gives curvature and stress in any case.
+
 **Multi-layer thin film on susbtrate**
 
 TO DO
