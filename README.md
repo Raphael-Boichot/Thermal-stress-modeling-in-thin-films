@@ -1,6 +1,6 @@
 # Thermal stress modeling in thin films
 
-This MATLAB set of codes is intended to predict the stress evolution in a system comprising a substrate and one layer or several layers of coating and subject to a variation of temperature (typically from fabrication temperature to room temperature).  The Optimization function to solve this problem is particularly tricky to minimize so the reader would not be surprised that the minimization method is non canonic (it couples a Nelder-Meads alogorithm to a Genetic Algorithm). It easily falls into local minima so the code can be reloaded automatically in case a local minima is detected (typically a minimum not close enough to zero).
+This MATLAB set of codes is intended to predict the stress evolution in a system comprising a substrate and one layer or several layers of coatings and subjected to a variation of temperature (typically from fabrication high temperature to room temperature).  The Optimization function to solve this problem is particularly tricky to minimize so the reader would not be surprised that the minimization method is non canonic (it couples a Nelder-Meads alogorithm to a Genetic Algorithm). It easily falls into local minima so the code is reloaded automatically in case a local minima is detected (typically a minimum not close enough to zero).
 
 **Single thin film on susbtrate**
 
