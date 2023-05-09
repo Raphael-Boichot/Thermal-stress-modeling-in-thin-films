@@ -4,7 +4,7 @@ This MATLAB set of codes is intended to predict the stress evolution in a system
 
 In this model, the "film" can be as thick as the "substrate", there is no limit for their ratio of thickness. The film is just supposed to be on top of the substrate for ease of understanding.
 
-**Single thin film on susbtrate**
+## Single thin film on susbtrate
 
 Strain calculation in the multilayer follows the classical beam theory and the formalism of [Hsueh et al.](https://doi.org/10.1016/S0040-6090(02)00699-5). It includes the effect of island growth following the model of [Wu et al.](https://doi.org/10.1557/PROC-0892-FF26-01) for the particular case of AlN growth on sapphire. It can be adapted to any other couple of materials, non ceramic included. The code returns the position of neutral axis, the final stress and the radius of curvature of the system at mechanical equilibrium.
 
@@ -15,7 +15,7 @@ How to use it :
 
 Result should be close to the simplified Stoney equation in case the film is infinitely thin compared to the substrate but gives curvature and stress in any case. There is no approximation in this method. To my knowledge, the codes always converges to the global optimum solution as it is written.
 
-**Multi-layer thin film on susbtrate with creeping subjected to thermal cycling**
+## Multi-layer thin film on susbtrate with creeping subjected to thermal cycling**
 
 To cite this work :
 [Danying Chen, Alexandre Crisci, Raphaël Boichot, Johann Colas, Ludovic Charpentier, Marianne Balat-Pichelin, Michel Pons, Frédéric Mercier,
@@ -30,6 +30,6 @@ How to use it :
 - **[minimize_GA_TZM_1.m](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Codes%20multilayers%20with%20creeping/minimize_GA_TZM_1.m)** is used for calculating initial stress distribution in the system (just after deposition)
 - **[GA.m](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Codes%20multilayers%20with%20creeping/GA.m) and [croisement_GA.m](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Codes%20multilayers%20with%20creeping/croisement_GA.m)**: calculation of Genetic algorithm coupled to a Nelder-Mead algorithm. Typically each candidate population is first subjected to a gradient free optimization (Nelder-Mead) then to a global optimization (Genetic Algorithm). If you do not understand what I say, do not modify any parameter into these functions.
 
-**Multi-layer thin film on susbtrate with creeping and oxydation subjected to thermal cycling**
+## Multi-layer thin film on susbtrate with creeping and oxydation subjected to thermal cycling**
 
 WIP
