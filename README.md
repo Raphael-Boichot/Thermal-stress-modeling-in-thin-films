@@ -17,8 +17,9 @@ Result should be close to the simplified Stoney equation in case the film is inf
 
 **Multi-layer thin film on susbtrate with creeping subjected to thermal cycling**
 
-Research work partly published in :
-Danying Chen, Alexandre Crisci, Raphaël Boichot, Johann Colas, Ludovic Charpentier, et al.. Modeling multilayer coating systems in solar receivers. Surface and Coatings Technology, 2020, 399, pp.126102. 10.1016/j.surfcoat.2020.126102
+To cite this work :
+[Danying Chen, Alexandre Crisci, Raphaël Boichot, Johann Colas, Ludovic Charpentier, Marianne Balat-Pichelin, Michel Pons, Frédéric Mercier,
+Modeling multilayer coating systems in solar receivers, Surface and Coatings Technology, Volume 399, 2020, 126102, ISSN 0257-8972, https://doi.org/10.1016/j.surfcoat.2020.126102.](https://www.sciencedirect.com/science/article/abs/pii/S0257897220307714)
 
 Details are given in the [preprint](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Codes%20multilayers%20with%20creeping/Documentation/articleCSP.pdf) and the [supplementary materials](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Codes%20multilayers%20with%20creeping/Documentation/articleCSP_Supplementary%20Materials.pdf). Based on the same formalism and the same method of resolution as **Single thin film on substrate**.
 
