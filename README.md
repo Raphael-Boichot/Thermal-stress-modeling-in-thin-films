@@ -15,7 +15,7 @@ How to use it :
 
 Result should be close to the simplified Stoney equation in case the film is infinitely thin compared to the substrate but gives curvature and stress in any case. There is no approximation in this method. To my knowledge, the codes always converges to the global optimum solution as it is written.
 
-## Multi-layer thin film on susbtrate with creeping subjected to thermal cycling**
+## Multi-layer thin film on susbtrate with creeping subjected to thermal cycling
 
 To cite this work :
 [Danying Chen, Alexandre Crisci, Raphaël Boichot, Johann Colas, Ludovic Charpentier, Marianne Balat-Pichelin, Michel Pons, Frédéric Mercier,
