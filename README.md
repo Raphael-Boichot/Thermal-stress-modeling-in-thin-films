@@ -30,6 +30,3 @@ How to use it :
 - **[minimize_GA_TZM_1.m](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Codes%20multilayers%20with%20creeping/minimize_GA_TZM_1.m)** is used for calculating initial stress distribution in the system (just after deposition)
 - **[GA.m](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Codes%20multilayers%20with%20creeping/GA.m) and [croisement_GA.m](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Codes%20multilayers%20with%20creeping/croisement_GA.m)**: calculation of Genetic algorithm coupled to a Nelder-Mead algorithm. Typically each candidate population is first subjected to a gradient free optimization (Nelder-Mead) then to a global optimization (Genetic Algorithm). If you do not understand what I say, do not modify any parameter into these functions.
 
-## Multi-layer thin film on susbtrate subjected to thermal cycling with creeping and oxydation ("Ultra Violence") 
-
-WIP
