@@ -1,7 +1,7 @@
 % ------------------------
 % 1-code 'Main_thermal_n_cycles_oxidation' & 'cycle_GA' & 'Contrainte_multicouche_Hsueh_4' couche are used for calculating the stress evolution during thermal cycling
 % 
-% 2-code 'minimize_GA_TZM_1' is used for claculating initial stress distribution in the system (just after deposition)
+% 2-code 'minimize_GA_TZM_1' is used for calculating initial stress distribution in the system (just after deposition)
 % 
 % 3-files 'AlN_TZM_AlN_q10000_xx_CTEofT' are obtained using instantaneous CTE for claculations
 %   also, we used a deltat of 1/12 (h) and a node number of 5000 for the substrate during these calculations
