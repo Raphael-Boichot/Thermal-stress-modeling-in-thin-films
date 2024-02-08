@@ -31,3 +31,19 @@ How to use it :
 - **[GA.m](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Codes%20multilayers%20with%20creeping/GA.m) and [croisement_GA.m](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Codes%20multilayers%20with%20creeping/croisement_GA.m)**: calculation of Genetic algorithm coupled to a Nelder-Mead algorithm. Typically each candidate population is first subjected to a gradient free optimization (Nelder-Mead) then to a global optimization (Genetic Algorithm). If you do not understand what I say, do not modify any parameter into these functions.
 
 ## Multi-layer thin film on susbtrate subjected to thermal cycling, creeping and oxydation ("Ultra violence")
+
+% 1-code 'n_cycle' & 'cycle_GA' & 'Contrainte_multicouche_Hsueh_4' couche are used for claculating the stress evolution during thermal cycling
+% 
+% 2-code 'minimize_GA_TZM_1' is used for claculating initial stress distribution in the system (just after deposition)
+% 
+% 3-files 'AlN_TZM_AlN_q10000_xx_CTEofT' are obtained using instantaneous CTE for claculations
+%   also, we used a deltat of 1/12 (h) and a node number of 5000 for the substrate during these claculations
+% 
+% 4-files 'AlN_TZM_AlN_q10000' are obtained using constant CTE
+%   also, we used a deltat of 1/12 (h) and a node number of 5000 for the substrate during these claculations
+% 
+% 5-files 'AlN_TZM_AlN_maille50000_q10000_Tambxx_xx': use 25 °C or 20 °C as ambiant temperature in the code (for the others without Tamb mentioned in the file name, we use 25 °C as ambiant temperature)
+%   also, we used a deltat of 1/6 (h) and a node number of 50000 for the substrate during these claculations
+% 
+% 5-files 'AlN_TZM_AlN_maille50000_q10000_xx_CTEofT': use instantaneous CTE for claculations
+%   also, we used a deltat of 1/6 (h) and a node number of 50000 for the substrate during these claculations
