@@ -12,7 +12,7 @@
 % 5-files 'AlN_TZM_AlN_maille50000_q10000_Tambxx_xx': use 25 °C or 20 °C as ambiant temperature in the code (for the others without Tamb mentioned in the file name, we use 25 °C as ambiant temperature)
 %   also, we used a deltat of 1/6 (h) and a node number of 50000 for the substrate during these calculations
 % 
-% 5-files 'AlN_TZM_AlN_maille50000_q10000_xx_CTEofT': use instantaneous CTE for claculations
+% 5-files 'AlN_TZM_AlN_maille50000_q10000_xx_CTEofT': use instantaneous CTE for calculations
 %   also, we used a deltat of 1/6 (h) and a node number of 50000 for the substrate during these calculations
 % ------------------------
 
