@@ -39,20 +39,10 @@ Modeling multilayer coating systems in solar receivers, Surface and Coatings Tec
 Details are given in the [preprint](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Article%20Concentrated%20Solar%20Power.pdf) and the [supplementary materials](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Article%20Concentrated%20Solar%20Power_Supplementary%20materials.pdf). Based on the same formalism and the same method of resolution as **Single thin film on substrate**.
 
 How to use it:
+- **[Main_thermal_n_cycles_oxidation.m](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Codes%20multilayers%20with%20creeping%20and%20oxidation/Contrainte_multicouche_Hsueh_4couches.m)** is the main entry point. It contains geometric parameters of subtrate and thin film, thermal boundary conditions (T and heat flux), growth strain in the coating and temperature, cycle (holding time and cooling temperature can be modified.
+- **[minimize_GA_TZM_1.m](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Codes%20multilayers%20with%20creeping%20and%20oxidation/minimize_GA_TZM_1.m)** is used for calculating initial stress distribution in the system (just after deposition).
+- **[cycle_GA.m](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Codes%20multilayers%20with%20creeping%20and%20oxidation/cycle_GA.m)** contains the definition of the thermal expansion coefficents (entered as polynomials for maximum accuracy). cycle_GA is used for calculating the stress evolution during thermal cycling.
+- **[Contrainte_multicouche_Hsueh_4.m](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Codes%20multilayers%20with%20creeping%20and%20oxidation/Contrainte_multicouche_Hsueh_4couches.m)** contains the mechanical modeling itself based on Hsueh et al. The model consists in zeroing independently 3 beefy integrals at the same time (namely the force due to the uniform strain, force due to the bending strain and the sum of bending moments) by varying the total stress, the redius of curvature and the position of neutral axis. There is an obvious local minima where the curvature is inversed (the solution is a bell shaped surface) so the code systematically searches for better solutions at the opposite of a converged one.
+- **[GA.m](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Codes%20multilayers%20with%20creeping%20and%20oxidation/GA.m)**: calculation of Genetic algorithm coupled to a Nelder-Mead algorithm. Typically each candidate population is first subjected to a gradient free optimization (Nelder-Mead) then to a global optimization (Genetic Algorithm). If you do not understand what I say, do not modify any parameter into these functions.
 
--
-% 1-code 'n_cycle' & 'cycle_GA' & 'Contrainte_multicouche_Hsueh_4' couche are used for claculating the stress evolution during thermal cycling
-% 
-% 2-code 'minimize_GA_TZM_1' is used for claculating initial stress distribution in the system (just after deposition)
-% 
-% 3-files 'AlN_TZM_AlN_q10000_xx_CTEofT' are obtained using instantaneous CTE for claculations
-%   also, we used a deltat of 1/12 (h) and a node number of 5000 for the substrate during these claculations
-% 
-% 4-files 'AlN_TZM_AlN_q10000' are obtained using constant CTE
-%   also, we used a deltat of 1/12 (h) and a node number of 5000 for the substrate during these claculations
-% 
-% 5-files 'AlN_TZM_AlN_maille50000_q10000_Tambxx_xx': use 25 °C or 20 °C as ambiant temperature in the code (for the others without Tamb mentioned in the file name, we use 25 °C as ambiant temperature)
-%   also, we used a deltat of 1/6 (h) and a node number of 50000 for the substrate during these claculations
-% 
-% 5-files 'AlN_TZM_AlN_maille50000_q10000_xx_CTEofT': use instantaneous CTE for claculations
-%   also, we used a deltat of 1/6 (h) and a node number of 50000 for the substrate during these claculations
+The code output text files containing stresses with time as a function of position in sample thickness
