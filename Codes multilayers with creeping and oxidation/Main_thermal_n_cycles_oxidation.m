@@ -1,19 +1,19 @@
 % ------------------------
-% 1-code 'n_cycle' & 'cycle_GA' & 'Contrainte_multicouche_Hsueh_4' couche are used for claculating the stress evolution during thermal cycling
+% 1-code 'Main_thermal_n_cycles_oxidation' & 'cycle_GA' & 'Contrainte_multicouche_Hsueh_4' couche are used for calculating the stress evolution during thermal cycling
 % 
 % 2-code 'minimize_GA_TZM_1' is used for claculating initial stress distribution in the system (just after deposition)
 % 
 % 3-files 'AlN_TZM_AlN_q10000_xx_CTEofT' are obtained using instantaneous CTE for claculations
-%   also, we used a deltat of 1/12 (h) and a node number of 5000 for the substrate during these claculations
+%   also, we used a deltat of 1/12 (h) and a node number of 5000 for the substrate during these calculations
 % 
 % 4-files 'AlN_TZM_AlN_q10000' are obtained using constant CTE
-%   also, we used a deltat of 1/12 (h) and a node number of 5000 for the substrate during these claculations
+%   also, we used a deltat of 1/12 (h) and a node number of 5000 for the substrate during these calculations
 % 
-% 5-files 'AlN_TZM_AlN_maille50000_q10000_Tambxx_xx': use 25 °C or 20 °C as ambiant temperature in the code (for the others without Tamb mentioned in the file name, we use 25 °C as ambiant temperature)
-%   also, we used a deltat of 1/6 (h) and a node number of 50000 for the substrate during these claculations
+% 5-files 'AlN_TZM_AlN_maille50000_q10000_Tambxx_xx': use 25 Â°C or 20 Â°C as ambiant temperature in the code (for the others without Tamb mentioned in the file name, we use 25 Â°C as ambiant temperature)
+%   also, we used a deltat of 1/6 (h) and a node number of 50000 for the substrate during these calculations
 % 
 % 5-files 'AlN_TZM_AlN_maille50000_q10000_xx_CTEofT': use instantaneous CTE for claculations
-%   also, we used a deltat of 1/6 (h) and a node number of 50000 for the substrate during these claculations
+%   also, we used a deltat of 1/6 (h) and a node number of 50000 for the substrate during these calculations
 % ------------------------
 
 clc
@@ -33,17 +33,17 @@ global strain_AlN;
 global T_elaboration;
 global q_thermique;
 
-T_elaboration=1200;%°C température pour la croissance d'AlN
-T_ambiant=20;%°C température finale d'une cycle
-%T_top=1400-273.15;%°C température fixée pour le top du système
-T_bottom=1000;%°C température fixée pour la bas du système
+T_elaboration=1200;%Â°C tempÃ©rature pour la croissance d'AlN
+T_ambiant=20;%Â°C tempÃ©rature finale d'une cycle
+%T_top=1400-273.15;%Â°C tempÃ©rature fixÃ©e pour le top du systÃ¨me
+T_bottom=1000;%Â°C tempÃ©rature fixÃ©e pour la bas du systÃ¨me
 T_int=[T_bottom T_ambiant];
 q_thermique=-10000e3;%W.m-2
 
-%strain_AlN=-3e-3;%déformation de croissance
+%strain_AlN=-3e-3;%dÃ©formation de croissance
 strain_AlN=0;
 
-t_s=1e-3; %m, épaisseur du substrat
+t_s=1e-3; %m, Ã©paisseur du substrat
 t_c=60e-6;
 
 holdtime=10;%h
