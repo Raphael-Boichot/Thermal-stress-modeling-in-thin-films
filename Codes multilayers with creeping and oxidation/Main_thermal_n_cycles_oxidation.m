@@ -3,7 +3,7 @@
 % 
 % 2-code 'minimize_GA_TZM_1' is used for calculating initial stress distribution in the system (just after deposition)
 % 
-% 3-files 'AlN_TZM_AlN_q10000_xx_CTEofT' are obtained using instantaneous CTE for claculations
+% 3-files 'AlN_TZM_AlN_q10000_xx_CTEofT' are obtained using instantaneous CTE for calculations
 %   also, we used a deltat of 1/12 (h) and a node number of 5000 for the substrate during these calculations
 % 
 % 4-files 'AlN_TZM_AlN_q10000' are obtained using constant CTE
