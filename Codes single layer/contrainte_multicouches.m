@@ -21,12 +21,12 @@ sum_biax_forces=F1+F2;
 
 C1 = @(z)Y_substrate*(z-t_b)/r;
 C2 = @(z)Y_film*(z-t_b)/r;
-sum_curv_forces=quad(C1,-t_s,0)+quad(C2,0,t_f);
+sum_curv_forces=integral(C1,-t_s,0)+integral(C2,0,t_f);
 
 %attention, changement du signe pour alpha par rapport à Hsueh
 M1 = @(z)Y_substrate*(c+(z-t_b)/r+eps_thermique_substrate).*(z-t_b);
 M2 = @(z)Y_film*(c+(z-t_b)/r+eps_thermique_film-eps_misfit-eps_coalescence*ilots).*(z-t_b);
-sum_curv_moments=quad(M1,-t_s,0)+quad(M2,0,t_f);
+sum_curv_moments=integral(M1,-t_s,0)+integral(M2,0,t_f);
 
 dist=abs(sum_biax_forces)+100*abs(sum_curv_forces)+1e6*abs(sum_curv_moments);
 
