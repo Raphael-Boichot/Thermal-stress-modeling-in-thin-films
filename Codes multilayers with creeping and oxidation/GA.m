@@ -40,7 +40,7 @@ else
 end
 
 if skip==0;
-    %création de la population intiale par algo de Monté Carlo
+    %création de la population intiale par algo de Monte Carlo
     disp('Starting with a Monté-Carlo algorithm')
     for i=1:1:20000
         for j=1:1:nb_var
