@@ -102,7 +102,7 @@ for k=1:nb_cycle
         Curvature=[Curvature,Curvature_cycle];
         TIME=[TIME,temps+TIME(nb_t*(k-1))];
     end
-    disp([ ]);
+    disp(' ');
     disp(['Cycle: ',num2str(k),'*********************************']);
     
     figure(1)
