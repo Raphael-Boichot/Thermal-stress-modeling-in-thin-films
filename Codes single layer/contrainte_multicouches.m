@@ -1,4 +1,4 @@
-function [dist]=Contrainte_multicouche(x);
+function [dist]=contrainte_multicouches(x)
 
 global ilots;
 global t_f;

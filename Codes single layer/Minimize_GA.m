@@ -1,6 +1,6 @@
 %Calculation of thermal stress in a single layer coating on a substrate
 clc
-clear all
+clear
 close all
 rng('shuffle', 'twister')
 format 'ShortE'
@@ -54,22 +54,22 @@ Y_substrate=E_substrate/(1-nu_substrate);%biaxial modulus Pa
 alpha_film = @(T)(a0_f+a1_f.*T+a2_f.*T.^2+a3_f.*T.^3+a4_f.*T.^4+a5_f.*T.^5)/1000000;
 alpha_substrate = @(T)(a0_s+a1_s.*T+a2_s.*T.^2+a3_s.*T.^3+a4_s.*T.^4+a5_s.*T.^5)/1000000;
 
-eps_thermique_film=quad(alpha_film,T_depot,T_final);
-eps_thermique_substrate=quad(alpha_substrate,T_depot,T_final);
+eps_thermique_film=integral(alpha_film,T_depot,T_final);
+eps_thermique_substrate=integral(alpha_substrate,T_depot,T_final);
 
 %Raw optimization with random search genetic algorithm
 fval=0;
-while fval==0;
+while fval==0
 [x,fval]=GA(@contrainte_multicouches,3,1e-8);
-end;
+end
 
 disp('Global minimum found !');
 c=x(1);%final stress
 t_b=x(2);%neutral axis position (0 is the interface film/substrate)
 r=x(3);%Radius of curvature
 disp(['c=',num2str(c),'(-) tb=',num2str(t_b),'(m) r=',num2str(r),'(m)']);
-if x(3)<0; disp('Compressive stress in "thin" film');end;
-if x(3)>0; disp('Tensile stress in "thin" film');end;
+if x(3)<0; disp('Compressive stress in "thin" film');end
+if x(3)>0; disp('Tensile stress in "thin" film');end
 disp(['Objective function at final step=',num2str(fval)]);
 epsilon=c+((t_f/2)-t_b)/r+eps_thermique_film-eps_misfit-eps_coalescence*ilots;
 sigma_hsueh=-epsilon*Y_film;
