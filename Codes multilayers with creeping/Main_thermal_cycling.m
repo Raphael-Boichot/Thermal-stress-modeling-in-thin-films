@@ -102,8 +102,9 @@ for k=1:nb_cycle
         Curvature=[Curvature,Curvature_cycle];
         TIME=[TIME,temps+TIME(nb_t*(k-1))];
     end
-    k;
-
+    disp([ ]);
+    disp(['Cycle: ',num2str(k),'*********************************']);
+    
     figure(1)
     plot(TIME,Curvature,'LineWidth',1)
     figure(2)
