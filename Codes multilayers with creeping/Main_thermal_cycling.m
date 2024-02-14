@@ -1,19 +1,19 @@
 % ------------------------
-% 1-code 'Main_thermal_cycling' & 'cycle_GA' & 'Contrainte_multicouche_Hsueh_4' couche are used for claculating the stress evolution during thermal cycling
+% 1-code 'Main_thermal_n_cycles_oxidation' & 'cycle_GA' & 'Contrainte_multicouche_Hsueh_4' couche are used for calculating the stress evolution during thermal cycling
 % 
-% 2-code 'minimize_GA_TZM_1' is used for claculating initial stress distribution in the system (just after deposition)
+% 2-code 'minimize_GA_TZM_1' is used for calculating initial stress distribution in the system (just after deposition)
 % 
-% 3-files 'AlN_TZM_AlN_q10000_xx_CTEofT' are obtained using instantaneous CTE for claculations
-%   also, we used a deltat of 1/12 (h) and a node number of 5000 for the substrate during these claculations
+% 3-files 'AlN_TZM_AlN_q10000_xx_CTEofT' are obtained using instantaneous CTE for calculations
+%   also, we used a deltat of 1/12 (h) and a node number of 5000 for the substrate during these calculations
 % 
 % 4-files 'AlN_TZM_AlN_q10000' are obtained using constant CTE
-%   also, we used a deltat of 1/12 (h) and a node number of 5000 for the substrate during these claculations
+%   also, we used a deltat of 1/12 (h) and a node number of 5000 for the substrate during these calculations
 % 
 % 5-files 'AlN_TZM_AlN_maille50000_q10000_Tambxx_xx': use 25 °C or 20 °C as ambiant temperature in the code (for the others without Tamb mentioned in the file name, we use 25 °C as ambiant temperature)
-%   also, we used a deltat of 1/6 (h) and a node number of 50000 for the substrate during these claculations
+%   also, we used a deltat of 1/6 (h) and a node number of 50000 for the substrate during these calculations
 % 
-% 5-files 'AlN_TZM_AlN_maille50000_q10000_xx_CTEofT': use instantaneous CTE for claculations
-%   also, we used a deltat of 1/6 (h) and a node number of 50000 for the substrate during these claculations
+% 5-files 'AlN_TZM_AlN_maille50000_q10000_xx_CTEofT': use instantaneous CTE for calculations
+%   also, we used a deltat of 1/6 (h) and a node number of 50000 for the substrate during these calculations
 % ------------------------
 
 clc
