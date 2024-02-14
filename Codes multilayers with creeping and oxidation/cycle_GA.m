@@ -62,7 +62,6 @@ B_coating=exp(24.1);%MPa-ns-1
 n_coating=1;
 Q_coating=586e3;
 
-
 %thermal resistance
 R_coating=t_c/lambda_coating;
 R_substrate=t_s/lambda_substrate;
@@ -121,7 +120,6 @@ end
 for j=2:nb_t
     z(:,j)=z(:,j-1);%no oxide growth during heating
 
-
     if j<nb_t%during heating
         for i=1:nb
             if i<(nb_c+1+1)%c2
@@ -142,14 +140,12 @@ for j=2:nb_t
     creepstrain_cycle(:,j)=creepstrain_cycle(:,j-1)+creepstrainrate(:,j-1)*deltat;
     %creepstrain_cycle(:,j)=creepstrain_cycle(:,j-1)+creepstrainrate(:,j-1)*(time(j)-time(j-1));%update creepstrain
 
-
     %if j==nb_t
     %growthstrainrate_thick(j)=0;
     %growthstrainrate_lat(j)=0;
     %    t_tgo(j)=t_tgo(j-1);
     %    z(i,j)=z(i,j-1);
     %end
-
 
     %R_tgo(j-1)=t_tgo(j)/lambda_tgo;
     %R_total(j-1)=R_coating_2+R_coating_1+R_tgo(j-1)+R_substrate;
@@ -238,5 +234,5 @@ for j=2:nb_t
     disp(['Step: ',num2str(j),'-----------------------------']);
 
 end
-disp('end of one cycle');
+disp('End of current temperature cycle');
 %th_tgo_cycle=t_tgo;

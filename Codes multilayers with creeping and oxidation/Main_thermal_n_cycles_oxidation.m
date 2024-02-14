@@ -62,7 +62,7 @@ nb_cycle=10;
 
 for k=1:nb_cycle
     disp(' ');
-    disp(['Cycle: ',num2str(k),'*********************************']);
+    disp(['Cycle: ',num2str(k),'*******************************************']);
     if k==1
         tao_int=0;
         %growthstrain_thick_int=0;
@@ -126,15 +126,15 @@ for k=1:nb_cycle
     subplot(2,4,6)
     plot(TIME,creepstrain(nb_c+1,:),'LineWidth',1)
     xlabel('Time (h)')
-    ylabel('Creep strain (-)')
+    ylabel('Creep strain layer 1 (-)')
     subplot(2,4,7)
     plot(TIME,creepstrain(nb_c+nb_s+1,:),'LineWidth',1)
     xlabel('Time (h)')
-    ylabel('Creep strain (-)')
+    ylabel('Creep strain layer 2 (-)')
     subplot(2,4,8)
     plot(TIME,creepstrain(nb,:),'LineWidth',1)
     xlabel('Time (h)')
-    ylabel('Creep strain (-)')
+    ylabel('Creep strain layer 3 (-)')
     drawnow
 end
 
