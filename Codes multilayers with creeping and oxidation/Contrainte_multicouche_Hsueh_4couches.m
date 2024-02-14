@@ -1,6 +1,4 @@
 function [dist]=Contrainte_multicouche_Hsueh_4couches(x);
-
-
 global t_c;%thickness
 global t_s;
 global eps_thermique_coating_top;%misfit CTE
@@ -25,12 +23,10 @@ t_b=x(2);
 r=x(3);
 
 %formalisme de Hsueh
-
 F2=Y_substrate*(t_s*c-eps_thermique_substrate-int_creep_substrate);
 F3=Y_coating*(c*t_c-eps_thermique_coating_top-int_creep_coating_top-t_c*strain_AlN);
 F1=Y_coating*(c*t_c-eps_thermique_coating_bottom-int_creep_coating_bottom-t_c*strain_AlN);
 sum_biax_forces=F1+F2+F3;
-
 
 %formalisem de Hsueh
 C2 = @(z)Y_substrate*(z-t_b)/r;
@@ -38,7 +34,6 @@ C1 = @(z)Y_coating*(z-t_b)/r;
 C3 = @(z)Y_coating*(z-t_b)/r;
 %sum_curv_forces=integral(C1,-(t_s+t_tgo(j)),-t_tgo(j))+integral(C2,-t_tgo(j),0)+integral(C3,0,t_c1)+integral(C4,t_c1,(t_c1+t_c2));
 sum_curv_forces=integral(C1,-t_s/2-t_c,-t_s/2)+integral(C2,-t_s/2,t_s/2)+integral(C3,t_s/2,t_s/2+t_c);
-
 
 %formalisme de Hsueh
 int_c_substrate=c/2*((t_s/2-t_b)^2-(-t_s/2-t_b)^2);
@@ -58,4 +53,3 @@ sum_curv_moments=M1+M2+M3;
 
 dist=abs(sum_biax_forces)+100*abs(sum_curv_forces)+1e6*abs(sum_curv_moments);
 %dist=abs(sum_biax_forces)+1000*abs(sum_curv_forces)+1e6*abs(sum_curv_moments);
-

@@ -1,17 +1,17 @@
 % ------------------------
 % 1-code 'Main_thermal_n_cycles_oxidation' & 'cycle_GA' & 'Contrainte_multicouche_Hsueh_4' couche are used for calculating the stress evolution during thermal cycling
-% 
+%
 % 2-code 'minimize_GA_TZM_1' is used for calculating initial stress distribution in the system (just after deposition)
-% 
+%
 % 3-files 'AlN_TZM_AlN_q10000_xx_CTEofT' are obtained using instantaneous CTE for calculations
 %   also, we used a deltat of 1/12 (h) and a node number of 5000 for the substrate during these calculations
-% 
+%
 % 4-files 'AlN_TZM_AlN_q10000' are obtained using constant CTE
 %   also, we used a deltat of 1/12 (h) and a node number of 5000 for the substrate during these calculations
-% 
+%
 % 5-files 'AlN_TZM_AlN_maille50000_q10000_Tambxx_xx': use 25 °C or 20 °C as ambiant temperature in the code (for the others without Tamb mentioned in the file name, we use 25 °C as ambiant temperature)
 %   also, we used a deltat of 1/6 (h) and a node number of 50000 for the substrate during these calculations
-% 
+%
 % 5-files 'AlN_TZM_AlN_maille50000_q10000_xx_CTEofT': use instantaneous CTE for calculations
 %   also, we used a deltat of 1/6 (h) and a node number of 50000 for the substrate during these calculations
 % ------------------------
@@ -60,7 +60,6 @@ nb_cycle=10;
 
 [r,stress_elaboration]=minimize_GA_TZM_1(T_elaboration,T_ambiant);%initial stress just after deposition
 
-
 for k=1:nb_cycle
     if k==1
         tao_int=0;
@@ -70,18 +69,17 @@ for k=1:nb_cycle
         stress_int=stress_elaboration;
         creepstrain_int=zeros(nb,1);
     end
-    
+
     [tao_accu,stress_cycle,creepstrain_cycle,Curvature_cycle]=cycle_GA(T_int,tao_int,stress_int,creepstrain_int);
-    
     tao_int=tao_accu;
     stress_int=stress_cycle(:,nb_t);
     creepstrain_int=creepstrain_cycle(:,nb_t);
-    
+
     for j=2:(nb_t-1)
         temps(j)=1/12+deltat*(j-2);
     end
     temps(nb_t)=temps(nb_t-1)+1/12;
-    
+
     if k==1
         stress=stress_cycle;
         creepstrain=creepstrain_cycle;
@@ -90,22 +88,20 @@ for k=1:nb_cycle
         %th_tgo=th_tgo_cycle;
         TIME=temps;
     end
-    
+
     if k>1
-    
-    %growthstrain_thick_int=growthstrain_thick_accu;
-    %growthstrain_lat_int=growthstrain_lat_accu;
-    %t_tgo_int=th_tgo_cycle(nb_t);
-    
-    %th_tgo=[th_tgo,th_tgo_cycle];
-    stress=[stress,stress_cycle];
-    creepstrain=[creepstrain,creepstrain_cycle];
-    Curvature_cycle(1)=Curvature(nb_t*(k-1));
-    Curvature=[Curvature,Curvature_cycle];  
-    TIME=[TIME,temps+TIME(nb_t*(k-1))];
+        %growthstrain_thick_int=growthstrain_thick_accu;
+        %growthstrain_lat_int=growthstrain_lat_accu;
+        %t_tgo_int=th_tgo_cycle(nb_t);
+        %th_tgo=[th_tgo,th_tgo_cycle];
+        stress=[stress,stress_cycle];
+        creepstrain=[creepstrain,creepstrain_cycle];
+        Curvature_cycle(1)=Curvature(nb_t*(k-1));
+        Curvature=[Curvature,Curvature_cycle];
+        TIME=[TIME,temps+TIME(nb_t*(k-1))];
     end
     k
-    
+
     figure(1)
     plot(TIME,Curvature,'LineWidth',1)
     figure(2)
@@ -131,16 +127,15 @@ for k=1:nb_cycle
     plot(TIME,creepstrain(nb_c+nb_s+1,:),'LineWidth',1)
     figure(8)
     plot(TIME,creepstrain(nb,:),'LineWidth',1)
-    
-    
-    
 end
+
+disp('Storing data into txt files, this may take some time...')
 [m,n]=size(creepstrain);
 fid=fopen('AlN_TZM_AlN_q10000_creepstrain_CTEofT.txt','wt');
 for i=1:1:m
     for j=1:1:n
         if j==n
-                fprintf(fid,'%12.5e\n',creepstrain(i,j));
+            fprintf(fid,'%12.5e\n',creepstrain(i,j));
         else
             fprintf(fid,'%12.5e\t',creepstrain(i,j));
         end
@@ -168,3 +163,4 @@ fclose(fid);
 fid=fopen('AlN_TZM_AlN_q10000_TIMEN_CTEofT.txt','wt');
 fprintf(fid,'%12.5f\n',TIME);
 fclose(fid);
+disp('End of calculation !')

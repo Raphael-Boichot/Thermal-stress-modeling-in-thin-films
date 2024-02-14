@@ -93,7 +93,7 @@ if skip==0;
         obj=val(nb-1);
         if nb==max_steps
             obj=0;
-            disp('Echec de la méthode, reload');
+            disp('Optimization failed, restarting from scratch');
         end
     end
     fval=obj;
