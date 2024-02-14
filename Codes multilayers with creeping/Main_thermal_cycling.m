@@ -62,6 +62,8 @@ nb_cycle=10;
 [r,stress_elaboration]=minimize_GA_TZM_1(T_elaboration,T_ambiant);%initial stress just after deposition
 
 for k=1:nb_cycle
+    disp(' ');
+    disp(['Cycle: ',num2str(k),'*********************************']);
     if k==1
         tao_int=0;
         %growthstrain_thick_int=0;
@@ -70,18 +72,18 @@ for k=1:nb_cycle
         stress_int=stress_elaboration;
         creepstrain_int=zeros(nb,1);
     end
-
+    
     [tao_accu,stress_cycle,creepstrain_cycle,Curvature_cycle]=cycle_GA(T_int,tao_int,stress_int,creepstrain_int);
-
+    
     tao_int=tao_accu;
     stress_int=stress_cycle(:,nb_t);
     creepstrain_int=creepstrain_cycle(:,nb_t);
-
+    
     for j=2:(nb_t-1)
         temps(j)=1/12+deltat*(j-2);
     end
     temps(nb_t)=temps(nb_t-1)+1/12;
-
+    
     if k==1
         stress=stress_cycle;
         creepstrain=creepstrain_cycle;
@@ -90,7 +92,7 @@ for k=1:nb_cycle
         %th_tgo=th_tgo_cycle;
         TIME=temps;
     end
-
+    
     if k>1
         %growthstrain_thick_int=growthstrain_thick_accu;
         %growthstrain_lat_int=growthstrain_lat_accu;
@@ -102,34 +104,32 @@ for k=1:nb_cycle
         Curvature=[Curvature,Curvature_cycle];
         TIME=[TIME,temps+TIME(nb_t*(k-1))];
     end
-    disp(' ');
-    disp(['Cycle: ',num2str(k),'*********************************']);
-    
-    figure(1)
+    subplot(2,4,1)
     plot(TIME,Curvature,'LineWidth',1)
-    figure(2)
+    subplot(2,4,2)
     plot(TIME,stress(nb_c+1,:),'LineWidth',1)
-    figure(3)
+    subplot(2,4,3)
     plot(TIME,stress(nb_c+nb_s+1,:),'LineWidth',1)
     xlabel('TIME (h)')
     ylabel('Stress (Pa)')
-    set(gca,'FontSize',18)
-    figure(4)
+    %set(gca,'FontSize',18)
+    subplot(2,4,4)
     plot(TIME,stress(nb,:),'LineWidth',1)
     xlabel('TIME (h)')
     ylabel('Stress (Pa)')
-    set(gca,'FontSize',18)
-    figure(5)
+    %set(gca,'FontSize',18)
+    subplot(2,4,5)
     plot(TIME,stress(1,:),'LineWidth',1)
     xlabel('TIME (h)')
     ylabel('Stress (Pa)')
-    set(gca,'FontSize',18)
-    figure(6)
+    %set(gca,'FontSize',18)
+    subplot(2,4,6)
     plot(TIME,creepstrain(nb_c+1,:),'LineWidth',1)
-    figure(7)
+    subplot(2,4,7)
     plot(TIME,creepstrain(nb_c+nb_s+1,:),'LineWidth',1)
-    figure(8)
+    subplot(2,4,8)
     plot(TIME,creepstrain(nb,:),'LineWidth',1)
+    drawnow
 end
 
 disp('Storing data into txt files, this may take some time...')
