@@ -26,8 +26,6 @@ global strain_AlN;
 global T_elaboration;
 global q_thermique;
 
-
-
 %Data for substrate, TZM
 E_substrate=320e9; %Pa
 nu_substrate=0.3;
@@ -121,6 +119,7 @@ end
 
 for j=2:nb_t
     z(:,j)=z(:,j-1);%no oxide growth during heating
+    
     if j<nb_t%during heating
         for i=1:nb
             if i<(nb_c+1+1)%c2
@@ -234,5 +233,5 @@ for j=2:nb_t
     disp(['Step: ',num2str(j),'-----------------------------']);
     
 end
-disp('end of one cycle');
+disp('End of current temperature cycle');
 %th_tgo_cycle=t_tgo;
