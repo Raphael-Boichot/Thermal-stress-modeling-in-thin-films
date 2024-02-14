@@ -17,10 +17,11 @@
 % ------------------------
 
 clc
-clear all
+clear
 close all
 rng('shuffle', 'twister')
 format 'ShortE'
+warning('off')
 
 global t_c;%thickness
 global t_s;
@@ -101,7 +102,7 @@ for k=1:nb_cycle
         Curvature=[Curvature,Curvature_cycle];
         TIME=[TIME,temps+TIME(nb_t*(k-1))];
     end
-    k
+    k;
 
     figure(1)
     plot(TIME,Curvature,'LineWidth',1)

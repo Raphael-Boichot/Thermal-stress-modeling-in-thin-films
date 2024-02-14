@@ -1,4 +1,4 @@
-function[tao_accu,stress_cycle,creepstrain_cycle,Curvature_cycle]=cycle_GA(T_int,tao_int,stress_int,creepstrain_int);
+function[tao_accu,stress_cycle,creepstrain_cycle,Curvature_cycle]=cycle_GA(T_int,tao_int,stress_int,creepstrain_int)
 
 global t_c;%thickness
 global t_s;
@@ -231,10 +231,8 @@ for j=2:nb_t
     %        end
     %    end
     %end
-
-    j
-
-
+    disp(['Step: ',num2str(j),'-----------------------------']);
+    
 end
 disp('end of one cycle');
 %th_tgo_cycle=t_tgo;
