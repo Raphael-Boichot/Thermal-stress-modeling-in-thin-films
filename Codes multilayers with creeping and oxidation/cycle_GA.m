@@ -152,15 +152,15 @@ for j=2:nb_t
 
     for i=1:nb
         if i<(nb_c+1+1)
-            eps(i,j)=quad(alpha_coating,T_elaboration,T(i,j));
+            eps(i,j)=integral(alpha_coating,T_elaboration,T(i,j));
             %eps(i,j)=alpha_coating*(-T_elaboration+T(i,j));
         end
         if (nb_c+1)<i&&i<(nb_c+nb_s+2)
-            eps(i,j)=quad(alpha_substrate,T_elaboration,T(i,j));
+            eps(i,j)=integral(alpha_substrate,T_elaboration,T(i,j));
             %eps(i,j)=alpha_substrate*(-T_elaboration+T(i,j));
         end
         if (nb_s+nb_c+1)<i
-            eps(i,j)=quad(alpha_coating,T_elaboration,T(i,j));
+            eps(i,j)=integral(alpha_coating,T_elaboration,T(i,j));
             %eps(i,j)=alpha_coating*(-T_elaboration+T(i,j));
         end
     end
