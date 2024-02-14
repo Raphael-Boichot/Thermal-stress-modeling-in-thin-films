@@ -4,6 +4,7 @@ clear all
 close all
 rng('shuffle', 'twister')
 format 'ShortE'
+warning('off')
 
 global ilots;
 global t_f;
@@ -17,7 +18,7 @@ global Y_film;
 global eps_misfit;
 global eps_coalescence;
 
-T_final=20;%캜 Final temperature, generally the room temperature
+T_final=20;%째C Final temperature, generally the room temperature
 T_depot=1200;%Fabrication temperature
 t_s=470e-6; %m, Substrate thickness
 t_f=1e-6; %m, Film thickness
@@ -26,7 +27,7 @@ L_ilots=30e-9; %Size of initial nucleation islands in 3D growth
 ilots=1; %0 to get rid of this effet
 
 %Data for AlN,
-%alpha=(a0+a1(T캜)+a2(T캜)^2+a3(T캜)^3+a4(T캜)^4+a5(T캜)^5)*1e-6
+%alpha=(a0+a1(T째C)+a2(T째C)^2+a3(T째C)^3+a4(T째C)^4+a5(T째C)^5)*1e-6
 E_film=340e9;      %Pa
 nu_film=0.21;
 a0_f=2.7405;
@@ -39,7 +40,7 @@ Y_film=E_film/(1-nu_film); %biaxial modulus Pa
 eps_coalescence=(2*L_ilots*(2*0.4-0)/Y_film)^0.5/L_ilots;
 
 %Data for sapphire,
-%alpha=(a0+a1(T캜)+a2(T캜)^2+a3(T캜)^3+a4(T캜)^4+a5(T캜)^5)*1e-6
+%alpha=(a0+a1(T째C)+a2(T째C)^2+a3(T째C)^3+a4(T째C)^4+a5(T째C)^5)*1e-6
 E_substrate=431.24e9; %Pa
 nu_substrate=0.285;
 a0_s=4.844;
