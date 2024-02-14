@@ -25,8 +25,6 @@ global strain_AlN;
 global T_elaboration;
 global q_thermique;
 
-
-
 %Data for substrate, TZM
 E_substrate=320e9; %Pa
 nu_substrate=0.3;
@@ -237,9 +235,7 @@ for j=2:nb_t
     %        end
     %    end
     %end
-
-    j
-
+    disp(['Step: ',num2str(j),'-----------------------------']);
 
 end
 disp('end of one cycle');

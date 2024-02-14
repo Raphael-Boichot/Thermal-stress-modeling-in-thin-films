@@ -20,7 +20,6 @@ nb_var=vec_ini;
 val=1;
 % initialisation population et nb de cycle
 vec_objectif=zeros(nb_pop,1);
-pop=zeros(nb_pop, nb_var);
 
 skip=0;
 if isfile('sol.tmp')
@@ -39,7 +38,7 @@ else
     disp('Previous solution not found, starting from scratch')
 end
 
-if skip==0;
+if skip==0
     %création de la population intiale par algo de Monte Carlo
     disp('Starting with a Monte-Carlo algorithm')
     for i=1:1:20000
@@ -97,7 +96,7 @@ if skip==0;
         end
     end
     fval=obj;
-    vec_opt=[popnew(1,:)];
+    vec_opt=popnew(1,:);
 end
 
 save('sol.tmp','vec_opt','-ascii')

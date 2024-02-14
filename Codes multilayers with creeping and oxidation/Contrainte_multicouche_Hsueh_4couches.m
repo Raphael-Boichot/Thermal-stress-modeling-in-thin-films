@@ -1,4 +1,4 @@
-function [dist]=Contrainte_multicouche_Hsueh_4couches(x);
+function [dist]=Contrainte_multicouche_Hsueh_4couches(x)
 global t_c;%thickness
 global t_s;
 global eps_thermique_coating_top;%misfit CTE
@@ -15,7 +15,6 @@ global moment_eps_coating_bottom;
 global moment_creep_substrate;
 global moment_creep_coating_top;
 global moment_creep_coating_bottom;
-global j;
 global strain_AlN;
 
 c=x(1);

@@ -1,5 +1,5 @@
 %Calculation of thermal stress in a multilayer coating
-function[r,stress_elaboration]=minimize_GA_TZM_1(T_elaboration,T_ambiant);
+function[r,stress_elaboration]=minimize_GA_TZM_1(T_elaboration,T_ambiant)
 global t_c;
 global t_s;
 global T_depot;

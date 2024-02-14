@@ -15,12 +15,12 @@
 % 5-files 'AlN_TZM_AlN_maille50000_q10000_xx_CTEofT': use instantaneous CTE for calculations
 %   also, we used a deltat of 1/6 (h) and a node number of 50000 for the substrate during these calculations
 % ------------------------
-
 clc
-clear all
+clear
 close all
 rng('shuffle', 'twister')
 format 'ShortE'
+warning('off')
 
 global t_c;%thickness
 global t_s;
@@ -100,7 +100,8 @@ for k=1:nb_cycle
         Curvature=[Curvature,Curvature_cycle];
         TIME=[TIME,temps+TIME(nb_t*(k-1))];
     end
-    k
+    disp([ ]);
+    disp(['Cycle: ',num2str(k),'*********************************']);
 
     figure(1)
     plot(TIME,Curvature,'LineWidth',1)
