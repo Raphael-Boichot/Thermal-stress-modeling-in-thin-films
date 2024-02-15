@@ -1,4 +1,4 @@
-Authors : 陈丹莹 (CHEN DanYing), Frédéric MERCIER and Raphaël BOICHOT
+**Authors : 陈丹莹 (CHEN DanYing), Frédéric MERCIER and Raphaël BOICHOT**
 
 # Thermal stress modeling in thin films
 
