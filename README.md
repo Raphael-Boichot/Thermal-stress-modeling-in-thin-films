@@ -19,9 +19,7 @@ Result should be close to the simplified Stoney equation in case the film is inf
 
 ## Multi-layer thin film on susbtrate subjected to thermal cycling and creeping ("Hurt Me Plenty")
 
-To cite this work:
-[Danying Chen, Alexandre Crisci, Raphaël Boichot, Johann Colas, Ludovic Charpentier, Marianne Balat-Pichelin, Michel Pons, Frédéric Mercier,
-Modeling multilayer coating systems in solar receivers, Surface and Coatings Technology, Volume 399, 2020, 126102, ISSN 0257-8972, https://doi.org/10.1016/j.surfcoat.2020.126102.](https://www.sciencedirect.com/science/article/abs/pii/S0257897220307714)
+To cite this work: [https://doi.org/10.1016/j.surfcoat.2020.126102](https://doi.org/10.1016/j.surfcoat.2020.126102)
 
 Details are given in the [preprint](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Article%20Concentrated%20Solar%20Power.pdf) and the [supplementary materials](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Article%20Concentrated%20Solar%20Power_Supplementary%20materials.pdf). Based on the same formalism and the same method of resolution as **Single thin film on substrate**.
 
@@ -34,9 +32,7 @@ How to use it:
 
 ## Multi-layer thin film on susbtrate subjected to thermal cycling, creeping and oxydation ("Ultra violence")
 
-To cite this work:
-[Danying Chen, Alexandre Crisci, Raphaël Boichot, Johann Colas, Ludovic Charpentier, Marianne Balat-Pichelin, Michel Pons, Frédéric Mercier,
-Modeling multilayer coating systems in solar receivers, Surface and Coatings Technology, Volume 399, 2020, 126102, ISSN 0257-8972, https://doi.org/10.1016/j.surfcoat.2020.126102.](https://www.sciencedirect.com/science/article/abs/pii/S0257897220307714)
+To cite this work:To cite this work: [https://doi.org/10.1016/j.surfcoat.2020.126102](https://doi.org/10.1016/j.surfcoat.2020.126102)
 
 Details are given in the [preprint](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Article%20Concentrated%20Solar%20Power.pdf) and the [supplementary materials](https://github.com/Raphael-Boichot/Thermal-stress-modeling-in-thin-films/blob/main/Article%20Concentrated%20Solar%20Power_Supplementary%20materials.pdf). Based on the same formalism and the same method of resolution as **Single thin film on substrate**.
 
