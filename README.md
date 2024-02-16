@@ -32,6 +32,6 @@ How to use it:
 
 ## Multi-layer thin film on susbtrate subjected to thermal cycling, creeping and oxydation ("Ultra violence")
 
-To cite this work:To cite this work: [https://doi.org/10.1016/j.surfcoat.2020.126102](https://doi.org/10.1016/j.surfcoat.2020.126102)
+To cite this work: [https://doi.org/10.1016/j.surfcoat.2020.126102](https://doi.org/10.1016/j.surfcoat.2020.126102)
 
-WIP, wait for code validation
+Work in progess, wait for code validation
